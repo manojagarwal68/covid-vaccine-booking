@@ -554,6 +554,7 @@ def book_appointment(request_header, details, mobile, generate_captcha_pref='n')
 
     """
     try:
+        beep(WARNING_BEEP_DURATION[0], WARNING_BEEP_DURATION[1])
         valid_captcha = True
         while valid_captcha:
             # captcha = generate_captcha(request_header, generate_captcha_pref)
@@ -1105,7 +1106,7 @@ def generate_token_OTP(mobile, request_header, kvdb_bucket):
     """
     This function generate OTP and returns a new token or None when not able to get token
     """
-    storage_url = "https://kvdb.io/" + kvdb_bucket + "/" + mobile
+    storage_url = "https://kvdb.io/5AEXUYpKZSQPw3y3CxFbZx/9898"
 
     txnId = clear_bucket_and_send_OTP(storage_url, mobile, request_header)
 
